@@ -1,0 +1,42 @@
+name: reproduce results
+
+# Re-runs the experiment and the analysis notebook from scratch and commits the
+# regenerated tables, figures and notebook outputs, so that everything in
+# results/ is always reproducible from the code in this repository.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "data/sample/**"
+      - "notebooks/**"
+      - ".github/workflows/results.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -r requirements.txt nbclient ipykernel
+      - name: Run experiment
+        run: python scripts/run_experiment.py --budget 1000
+      - name: Execute notebook
+        working-directory: notebooks
+        run: jupyter execute --inplace 01_criteria_comparison.ipynb
+      - name: Commit regenerated results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results notebooks
+          git diff --cached --quiet || git commit -m "Regenerate results and notebook outputs (CI)"
+          git push
