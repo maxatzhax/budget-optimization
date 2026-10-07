@@ -1,0 +1,8 @@
+department,min_share,max_share
+Production,0.25,0.45
+Sales & Marketing,0.08,0.25
+R&D,0.05,0.2
+IT,0.05,0.15
+HR & Training,0.03,0.1
+Logistics,0.05,0.15
+Administration,0.03,0.1
