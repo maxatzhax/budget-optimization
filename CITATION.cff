@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Enterprise budget optimization: code for the master's thesis 'Modeling of Enterprise Budget Optimization Processes'"
+abstract: "Linear programming models (single-scenario, expected-value and robust max-min) for allocating an enterprise budget across items and departments, with budget sensitivity analysis."
+authors:
+  - family-names: Zhaxalykov
+    given-names: Maksat
+    orcid: "https://orcid.org/0009-0001-0799-9836"
+    affiliation: "L.N. Gumilyov Eurasian National University"
+version: 1.0.0
+date-released: 2026-10-07
+license: MIT
+repository-code: "https://github.com/maxatzhax/budget-optimization"
+keywords:
+  - budget optimization
+  - linear programming
+  - decision support
+  - robust optimization
+  - operations research
