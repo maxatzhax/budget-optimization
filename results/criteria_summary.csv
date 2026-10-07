@@ -1,0 +1,6 @@
+criterion,allocated,effect_recession,effect_stable,effect_growth,worst_case,budget_shadow_price
+recession,1000.0,1196.76,1191.14,1185.51,1185.51,1.2137
+stable,1000.0,1170.84,1201.5,1232.16,1170.84,1.2717
+growth,1000.0,1160.45,1200.89,1241.32,1160.45,1.3618
+expected,1000.0,1170.84,1201.5,1232.16,1170.84,1.2666
+robust,1000.0,1194.14,1194.14,1194.14,1194.14,1.2122
